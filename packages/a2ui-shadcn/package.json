@@ -1,6 +1,6 @@
 {
   "name": "a2ui-shadcn",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A2UI protocol renderer mapping to shadcn/ui components",
   "type": "module",
   "main": "./dist/index.js",
