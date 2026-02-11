@@ -1,0 +1,68 @@
+{
+  "name": "a2ui-shadcn",
+  "version": "0.1.0",
+  "description": "A2UI protocol renderer mapping to shadcn/ui components",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean --external react --external react-dom",
+    "prepublishOnly": "pnpm build",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.5.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "react": "^19",
+    "react-dom": "^19",
+    "tsup": "^8.0.0",
+    "typescript": "^5",
+    "typescript-eslint": "^8.55.0",
+    "vitest": "^2.0.0"
+  },
+  "keywords": [
+    "a2ui",
+    "agent-to-ui",
+    "shadcn",
+    "react",
+    "ui",
+    "protocol"
+  ],
+  "license": "MIT",
+  "author": "Reza Shahnazar (https://github.com/rezashahnazar)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rezashahnazar/a2ui-shadcn"
+  },
+  "homepage": "https://a2ui-shadcn.shahnazar.me",
+  "bugs": {
+    "url": "https://github.com/rezashahnazar/a2ui-shadcn/issues"
+  }
+}

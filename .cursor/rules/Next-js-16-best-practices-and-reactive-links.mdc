@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+All best practices of the Next.js 16 should be carefully implrmented. Links should be carefully implemented to be instantly reactive and represent transition as clicked based on the best practices of Next.js 16. All components should have carefully similarly shaped minimal modern loading skeletons, represented in the loading state of rendering.

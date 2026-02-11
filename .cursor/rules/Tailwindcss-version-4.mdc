@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+The frontend styles should be implemented professionally based on tailwindcss version 4 practices. Make sure not to use old version classnames and always use the latest tailwindcc practices.

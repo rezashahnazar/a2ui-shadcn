@@ -1,0 +1,128 @@
+@import "tailwindcss";
+@import "tw-shimmer";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --popover: #ffffff;
+  --popover-foreground: #171717;
+  --primary: #171717;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f4;
+  --secondary-foreground: #171717;
+  --muted: #f4f4f4;
+  --muted-foreground: #737373;
+  --accent: #f4f4f4;
+  --accent-foreground: #171717;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #171717;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card: #0a0a0a;
+  --card-foreground: #ededed;
+  --popover: #0a0a0a;
+  --popover-foreground: #ededed;
+  --primary: #fafafa;
+  --primary-foreground: #171717;
+  --secondary: #262626;
+  --secondary-foreground: #fafafa;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+  --accent: #262626;
+  --accent-foreground: #fafafa;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fafafa;
+  --border: #262626;
+  --input: #262626;
+  --ring: #d4d4d4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: calc(var(--radius) + 2px);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer-container,
+  .shimmer-bg,
+  .shimmer {
+    animation: none !important;
+  }
+}
+
+/* Ensure shimmer text has visible color for animation */
+.shimmer {
+  --shimmer-duration: inherit;
+  --shimmer-speed: inherit;
+}
+
+code, pre {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-feature-settings: normal;
+}
+
+/* Prose styling for docs */
+.prose-docs h1 {
+  @apply text-3xl font-bold tracking-tight;
+}
+.prose-docs h2 {
+  @apply mt-10 border-b border-border pb-2 text-xl font-semibold;
+}
+.prose-docs h3 {
+  @apply mt-6 text-lg font-semibold;
+}
+.prose-docs p {
+  @apply mt-4 leading-7 text-foreground/90;
+}
+.prose-docs ul {
+  @apply mt-4 list-disc space-y-2 ps-6;
+}
+.prose-docs code {
+  @apply rounded bg-muted px-1.5 py-0.5 font-mono text-sm font-medium;
+}
+.prose-docs pre {
+  @apply mt-4 overflow-x-auto rounded-lg border border-border bg-muted/50 p-3 font-mono text-[0.8125rem] leading-snug;
+}
+.prose-docs pre code {
+  @apply bg-transparent p-0 font-normal;
+}
+.prose-docs strong {
+  @apply font-semibold text-foreground;
+}
+.prose-docs a {
+  @apply text-primary underline underline-offset-4 transition-colors hover:text-primary/80;
+}

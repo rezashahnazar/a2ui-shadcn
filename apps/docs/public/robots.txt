@@ -1,0 +1,34 @@
+# robots.txt for a2ui-shadcn
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://a2ui-shadcn.shahnazar.me/sitemap.xml
+
+# Optimize crawl rate
+Crawl-delay: 0
+
+# Allow all AI/LLM crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
