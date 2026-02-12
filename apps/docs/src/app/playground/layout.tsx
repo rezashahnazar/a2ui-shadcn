@@ -1,4 +1,5 @@
 import { PlaygroundHeader } from "@/components/playground-header";
+import { PlaygroundViewportController } from "@/components/playground-viewport-controller";
 import type { Metadata, Viewport } from "next";
 
 export const viewport: Viewport = {
@@ -49,11 +50,14 @@ export default function PlaygroundLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="playground-full-viewport fixed inset-0 flex w-full max-w-full flex-col overflow-hidden pt-[env(safe-area-inset-top)]">
-      <PlaygroundHeader />
-      <main className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
-        {children}
-      </main>
-    </div>
+    <>
+      <PlaygroundViewportController />
+      <div className="playground-full-viewport fixed inset-0 flex w-full max-w-full flex-col overflow-hidden pt-[env(safe-area-inset-top)]">
+        <PlaygroundHeader />
+        <main className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
+          {children}
+        </main>
+      </div>
+    </>
   );
 }
