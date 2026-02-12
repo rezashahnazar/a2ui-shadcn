@@ -460,12 +460,13 @@ export default function PlaygroundPage() {
                 </button>
               </SheetTrigger>
               <SheetContent side="bottom" className="flex h-[85dvh] max-h-[600px] w-full flex-col overflow-hidden rounded-t-2xl">
-                <SheetHeader className="border-b border-border pb-3">
+                <SheetHeader className="border-b border-border pb-3 shrink-0">
                   <SheetTitle className="text-base">Browse Examples</SheetTitle>
                 </SheetHeader>
-                <ScrollArea className="flex-1 py-3">
-                  {Object.entries(examplesByCategory).map(([category, examples]) => (
-                    <div key={category} className="mb-5 last:mb-2">
+                <ScrollArea className="min-h-0 min-w-0 flex-1 py-3">
+                  <div className="min-w-0">
+                    {Object.entries(examplesByCategory).map(([category, examples]) => (
+                      <div key={category} className="mb-5 last:mb-2">
                       <div className="mb-2 px-4 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                         {category}
                       </div>
@@ -504,6 +505,7 @@ export default function PlaygroundPage() {
                       </div>
                     </div>
                   ))}
+                  </div>
                 </ScrollArea>
               </SheetContent>
             </Sheet>
