@@ -1,5 +1,11 @@
 import { PlaygroundHeader } from "@/components/playground-header";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   title: "Interactive Playground",
@@ -43,7 +49,12 @@ export default function PlaygroundLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen flex-col overflow-hidden">
+    <div
+      className="playground-full-viewport fixed inset-x-0 bottom-0 flex w-full max-w-full flex-col overflow-hidden"
+      style={{
+        top: "env(safe-area-inset-top)",
+      }}
+    >
       <PlaygroundHeader />
       <main className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
         {children}

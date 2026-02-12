@@ -186,6 +186,12 @@ code, pre {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+/* Playground full viewport: 100dvh, iOS safe area, and older Safari fallback */
+.playground-full-viewport {
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
+}
+
 /* Compact preview for mobile playground */
 .preview-compact {
   font-size: 0.8125rem;
