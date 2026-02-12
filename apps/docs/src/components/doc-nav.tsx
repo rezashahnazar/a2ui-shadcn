@@ -50,10 +50,10 @@ export function DocNav({ onNavigate }: { onNavigate?: () => void }) {
   const componentsByCategory = getComponentsByCategory();
 
   return (
-    <nav className="space-y-6">
+    <nav className="space-y-10">
       {navItems.map((section) => (
         <div key={section.section}>
-          <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          <h4 className="mb-3 ps-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground/90">
             {section.section}
           </h4>
           <ul className="space-y-1">
@@ -66,10 +66,10 @@ export function DocNav({ onNavigate }: { onNavigate?: () => void }) {
                   <div>
                     <Link
                       href={item.href}
-                      className={`group relative flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-all ${
+                      className={`group relative flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200 ${
                         isActive
                           ? "bg-primary/10 text-primary"
-                          : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                          : "text-muted-foreground hover:bg-accent/80 hover:text-accent-foreground"
                       }`}
                       onClick={() => {
                         onNavigate?.();
@@ -81,7 +81,7 @@ export function DocNav({ onNavigate }: { onNavigate?: () => void }) {
                       <span>{item.title}</span>
                       {"expandable" in item && item.expandable && (
                         <svg
-                          className={`size-4 transition-transform ${expandedComponents ? "rotate-90" : ""}`}
+                          className={`size-4 shrink-0 transition-transform duration-200 ${expandedComponents ? "rotate-90" : ""}`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -103,12 +103,12 @@ export function DocNav({ onNavigate }: { onNavigate?: () => void }) {
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
-                        className="mt-1 space-y-0.5 ps-4"
+                        className="mt-2 space-y-1 ps-4 border-s border-border/60 ms-2"
                       >
                         {Object.entries(componentsByCategory).map(([category, components]) => (
                           components.length > 0 && (
                             <div key={category} className="space-y-0.5">
-                              <div className="px-3 py-1 text-xs font-medium text-muted-foreground/70">
+                              <div className="px-3 py-1.5 text-xs font-medium text-muted-foreground/80">
                                 {category}
                               </div>
                               {components.map((comp) => {
@@ -119,10 +119,10 @@ export function DocNav({ onNavigate }: { onNavigate?: () => void }) {
                                     key={comp.slug}
                                     href={compPath}
                                     onClick={onNavigate}
-                                    className={`block rounded-md px-3 py-1.5 text-xs transition-all ${
+                                    className={`block rounded-md px-3 py-2 text-xs transition-all duration-200 ${
                                       isCompActive
                                         ? "bg-primary/10 text-primary font-medium"
-                                        : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                                        : "text-muted-foreground hover:bg-accent/80 hover:text-accent-foreground"
                                     }`}
                                   >
                                     {comp.name}

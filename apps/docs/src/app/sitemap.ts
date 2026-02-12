@@ -79,7 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/examples`,
+      url: `${baseUrl}/playground`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,

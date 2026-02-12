@@ -58,10 +58,10 @@ export function CodeBlock({
   // Show placeholder during SSR to avoid hydration mismatch
   const syntaxContent = !mounted ? (
     <div
-      className="shimmer shimmer-bg overflow-hidden rounded-lg font-mono text-[0.8125rem] leading-snug bg-muted/40"
+      className="shimmer shimmer-bg overflow-hidden rounded-lg font-mono text-[0.75rem] leading-snug bg-muted/40"
       style={{
         margin: 0,
-        padding: "0.75rem 1rem",
+        padding: "0.75rem",
         minHeight: "80px",
       }}
     />
@@ -72,12 +72,13 @@ export function CodeBlock({
       showLineNumbers={showLineNumbers}
       customStyle={{
         margin: 0,
-        padding: "0.75rem 1rem",
-        fontSize: "0.8125rem",
+        padding: "0.75rem 0.75rem",
+        fontSize: "0.75rem",
         lineHeight: "1.4",
         background: syntaxBg,
         fontFamily: "var(--font-geist-mono), ui-monospace, monospace",
       }}
+      wrapLongLines={true}
       codeTagProps={{
         style: {
           fontFamily: "var(--font-geist-mono), ui-monospace, monospace",
@@ -136,7 +137,7 @@ export function CodeBlock({
             </AnimatePresence>
           </div>
         </motion.div>
-        <div className="absolute end-2 top-2 flex gap-2 opacity-0 transition-opacity group-hover:opacity-100">
+        <div className="absolute end-2 top-2 flex gap-2 opacity-100 transition-opacity sm:opacity-0 sm:group-hover:opacity-100">
           <div className="rounded bg-muted/90 px-2 py-1 text-xs text-muted-foreground backdrop-blur-sm">
             {language}
           </div>
@@ -195,7 +196,7 @@ export function CodeBlock({
   return (
     <div className="group relative">
       {content}
-      <div className="absolute end-2 top-2 flex gap-2 opacity-0 transition-opacity group-hover:opacity-100">
+      <div className="absolute end-2 top-2 flex gap-2 opacity-100 transition-opacity sm:opacity-0 sm:group-hover:opacity-100">
         <div className="rounded bg-muted/90 px-2 py-1 text-xs text-muted-foreground backdrop-blur-sm">
           {language}
         </div>

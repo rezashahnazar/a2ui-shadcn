@@ -108,19 +108,19 @@ The documentation site (`apps/docs`) provides a comprehensive documentation expe
 - Docs sidebar – collapsible drawer on mobile, sticky sidebar on desktop
 - Homepage links to all documentation sections
 
-**Interactive Playground (IDE-style)**
+**Interactive Playground (`/playground`)**
 - Resizable 4-panel layout – Examples sidebar | JSON editor | Live preview | Inspector (desktop)
-- Examples sidebar – organized by category with ScrollArea, always visible on desktop, dropdown on mobile
+- Examples sidebar – organized by category with ScrollArea on desktop, bottom sheet picker on mobile
 - Monaco Editor for JSON editing with syntax highlighting
 - 8+ pre-built reactive examples – Counter, Forms, Dashboard, Chat UI, Data Binding, and more
 - Category-organized examples (Basic, Forms, Layout, Real Use Cases, Advanced)
 - All examples use sendDataModel:true – full data model sent with actions for inspection
 - Reactive Flow Demos – two-way binding, action context resolution, live data updates
 - Live reactive preview with A2UISurface
-- Vertical inspector sections – Actions, Data Model, Timeline (no tabs, all visible)
+- Vertical inspector sections – Actions, Data Model, Timeline (desktop)
 - Real-time data model display (merges updateDataModel messages + action snapshots)
-- Mobile-optimized – improved touch targets, smooth transitions
-- Format JSON button with better mobile touch target
+- Mobile-optimized – bottom sheet for examples, tabbed panels (JSON/Preview/Inspector), collapsible inspector sections, compact header with hamburger menu
+- Format JSON button with touch-friendly targets
 - Real-time validation and error display
 
 **Design & UX**
@@ -162,7 +162,7 @@ Powered by `next-themes`. See [THEME_IMPLEMENTATION.md](./THEME_IMPLEMENTATION.m
 The documentation site is fully optimized for search engines and AI/LLM crawlers:
 
 - Comprehensive metadata and Open Graph tags
-- Dynamic OpenGraph images for homepage, docs, and examples
+- Dynamic OpenGraph images for homepage, docs, and playground
 - Structured data (JSON-LD): WebSite, SoftwareApplication, FAQ, HowTo, Course, Organization, Article, and Breadcrumb schemas
 - Sitemap.xml with proper priorities
 - RSS feed for documentation updates

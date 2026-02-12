@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     "agent ui demo",
   ],
   alternates: {
-    canonical: "/examples",
+    canonical: "/playground",
   },
   openGraph: {
     title: "Interactive Playground | a2ui-shadcn",
     description: "Try a2ui-shadcn in action with live examples. Edit A2UI JSON and see real-time UI updates.",
-    url: "https://a2ui-shadcn.shahnazar.me/examples",
+    url: "https://a2ui-shadcn.shahnazar.me/playground",
     type: "website",
     images: [
       {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ExamplesLayout({
+export default function PlaygroundLayout({
   children,
 }: {
   children: React.ReactNode;

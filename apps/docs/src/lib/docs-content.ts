@@ -101,7 +101,7 @@ A2UI defines four core message types:
 
 Ready to build? Head to the [Installation](./installation) guide to set up a2ui-shadcn in your project.
 
-For a hands-on introduction, try the [Interactive Playground](/examples) with live code examples.`,
+For a hands-on introduction, try the [Interactive Playground](/playground) with live code examples.`,
   },
   installation: {
     title: "Installation",
@@ -287,7 +287,7 @@ export default App;
 Now that you've installed a2ui-shadcn, continue to:
 - [Usage Guide](./usage) - Learn basic API usage
 - [Components Reference](./components) - Explore all available components
-- [Interactive Playground](/examples) - Try live examples`,
+- [Interactive Playground](/playground) - Try live examples`,
   },
   usage: {
     title: "Usage",
@@ -634,7 +634,7 @@ Here's how to use components in A2UI JSON:
 ### Next Steps
 
 - Explore individual component pages for detailed props and examples
-- Try components in the [Interactive Playground](/examples)
+- Try components in the [Interactive Playground](/playground)
 - Learn about [Theming](./theming) to customize component appearance`,
   },
   theming: {
@@ -1028,7 +1028,7 @@ Agent triggers:
 
 ### Live Examples
 
-Try these in the [Playground](/examples):
+Try these in the [Playground](/playground):
 
 - **Two-Way Binding**: See \`TextField\` update \`Text\` in real-time
 - **Reactive Flow Demo**: Type and click "Submit" to see context resolution
@@ -1234,6 +1234,6 @@ interface SSETransport {
 
 ### Next Steps
 
-- [Interactive Playground](/examples) - Try the API live`,
+- [Interactive Playground](/playground) - Try the API live`,
   },
 };

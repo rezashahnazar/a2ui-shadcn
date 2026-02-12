@@ -41,14 +41,18 @@ function ResizableHandle({
   return (
     <Separator
       className={cn(
-        "relative shrink-0 items-center justify-center bg-border transition-colors hover:bg-border/80",
+        "relative shrink-0 items-center justify-center transition-colors",
         isVertical
-          ? "flex h-px w-full min-h-1 cursor-row-resize flex-col"
-          : "flex w-px cursor-col-resize",
+          ? "flex w-full cursor-row-resize flex-col"
+          : "flex cursor-col-resize",
+        // Thin visible line with generous touch target via ::before
+        isVertical
+          ? "h-px bg-border/60 before:absolute before:inset-x-0 before:top-1/2 before:h-5 before:-translate-y-1/2 before:content-['']"
+          : "w-px bg-border/60 before:absolute before:inset-y-0 before:left-1/2 before:w-5 before:-translate-x-1/2 before:content-['']",
         withHandle
           ? (isVertical
-            ? "after:absolute after:inset-x-0 after:top-1/2 after:h-1 after:-translate-y-1/2 after:rounded-sm after:bg-border after:transition-colors hover:after:bg-primary/30"
-            : "after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 after:rounded-sm after:bg-border after:transition-colors hover:after:bg-primary/30")
+            ? "after:absolute after:left-1/2 after:top-1/2 after:h-0.5 after:w-8 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-border after:transition-colors hover:after:bg-primary/40"
+            : "after:absolute after:left-1/2 after:top-1/2 after:h-8 after:w-0.5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-border after:transition-colors hover:after:bg-primary/40")
           : undefined,
         className
       )}

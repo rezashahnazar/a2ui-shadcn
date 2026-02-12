@@ -3,6 +3,8 @@
 import Editor from "@monaco-editor/react";
 import { useTheme } from "next-themes";
 import { useState } from "react";
+import { useIsDesktop } from "@/lib/use-media-query";
+import { SimpleCodeEditor } from "@/components/simple-code-editor";
 
 interface MonacoEditorProps {
   value: string;
@@ -23,7 +25,21 @@ export function MonacoEditor({
 }: MonacoEditorProps) {
   const { resolvedTheme } = useTheme();
   const [isReady, setIsReady] = useState(false);
+  const isDesktop = useIsDesktop();
 
+  // Mobile: use lightweight simple code editor (touch & keyboard friendly)
+  if (!isDesktop) {
+    return (
+      <SimpleCodeEditor
+        value={value}
+        onChange={(v) => onChange(v)}
+        readOnly={readOnly}
+        className={className}
+      />
+    );
+  }
+
+  // Desktop: use full Monaco Editor
   return (
     <div className={`relative overflow-hidden rounded-lg border border-border ${className}`.trim()}>
       {!isReady && (
